@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
-import { ArrowRight, Play, Code2 } from 'lucide-react';
+import { ArrowRight, Play, Code2, Twitter, Linkedin, Instagram } from 'lucide-react';
 import GooeyText from '../components/GooeyText';
 import VerticalCutReveal from '../components/VerticalCutReveal';
 import BinaryRain from '../components/BinaryRain';
@@ -13,6 +13,23 @@ const morphingTexts = [
     'eCommerce',
     'Digital Products',
     'Experiences'
+];
+
+const socialLinks = [
+    { name: 'Twitter', icon: Twitter, href: 'https://x.com/bitbuddiestudio' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/bitbuddies-studio/' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/bitbuddiestudio/' },
+    { 
+        name: 'Threads', 
+        icon: () => (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c1.66 0 3.14-.67 4.22-1.78"/>
+                <path d="M16 12c0-2.21-1.79-4-4-4s-4 1.79-4 4"/>
+            </svg>
+        ), 
+        href: 'https://www.threads.com/@bitbuddiestudio' 
+    },
 ];
 
 const Hero = () => {
@@ -148,19 +165,32 @@ const Hero = () => {
                             <span className="hero__stat-label">Satisfaction</span>
                         </div>
                     </motion.div>
+
+                    {/* Social Links */}
+                    <motion.div
+                        className="hero__social"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1 }}
+                    >
+                        {socialLinks.map((social) => {
+                            const IconComponent = social.icon;
+                            return (
+                                <a
+                                    key={social.name}
+                                    href={social.href}
+                                    className="hero__social-link"
+                                    aria-label={social.name}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <IconComponent size={18} />
+                                </a>
+                            );
+                        })}
+                    </motion.div>
                 </div>
             </div>
-
-            {/* Scroll Indicator */}
-            <motion.div
-                className="hero__scroll"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1 }}
-            >
-                <span className="hero__scroll-text">Scroll</span>
-                <div className="hero__scroll-line" />
-            </motion.div>
         </section>
     );
 };

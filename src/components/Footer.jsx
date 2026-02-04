@@ -18,9 +18,9 @@ const footerLinks = {
 };
 
 const socialLinks = [
-    { name: 'Twitter', icon: Twitter, href: '#' },
-    { name: 'LinkedIn', icon: Linkedin, href: '#' },
-    { name: 'Instagram', icon: Instagram, href: '#' },
+    { name: 'Twitter', icon: Twitter, href: 'https://x.com/bitbuddiestudio' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/bitbuddies-studio/' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/bitbuddiestudio/' },
     { 
         name: 'Threads', 
         icon: () => (
@@ -30,7 +30,7 @@ const socialLinks = [
                 <path d="M16 12c0-2.21-1.79-4-4-4s-4 1.79-4 4"/>
             </svg>
         ), 
-        href: '#' 
+        href: 'https://www.threads.com/@bitbuddiestudio' 
     },
 ];
 
