@@ -1,0 +1,29 @@
+.gooey-text {
+    position: relative;
+    width: 100%;
+}
+
+.gooey-text__filter {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.gooey-text__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 1.2em;
+}
+
+.gooey-text__text {
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    user-select: none;
+    color: var(--text-primary);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+}

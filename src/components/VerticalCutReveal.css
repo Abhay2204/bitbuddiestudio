@@ -1,0 +1,17 @@
+.vertical-cut-reveal {
+    display: inline;
+}
+
+.vertical-cut-reveal__word-wrapper {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.vertical-cut-reveal__word {
+    display: inline-block;
+}
+
+.vertical-cut-reveal__space {
+    display: inline;
+}
